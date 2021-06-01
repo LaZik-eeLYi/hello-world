@@ -7,8 +7,8 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
 
-@ContextConfiguration(locations = {"/springStudy/spring-context.xml"})
-public class AopControllerTest extends AbstractTestNGSpringContextTests{
+@ContextConfiguration(locations = {"/cache/spring-context.xml"})
+public class StudentControllerTest extends AbstractTestNGSpringContextTests{
 
     @Autowired
     private AopController aopController;
