@@ -1,4 +1,4 @@
-package com.lupan.springStudy.chapter3;
+package com.lupan.springStudy.chapter3_aop.traditional;
 
 import org.springframework.aop.aspectj.annotation.AspectJProxyFactory;
 import org.testng.log4testng.Logger;

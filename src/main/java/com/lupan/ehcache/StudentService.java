@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class StudentService {
 
-    @CacheAnnotation(value = "get",cacheElementKey = "get")
+    @CacheAnnotation(value = "get", cacheElementKey = "get_student_cache", operation = CacheOperation.READ)
     @LogAnnotation(methodDescription = "查询")
     public Student get(int num){
         Student student = new Student();
@@ -22,7 +22,7 @@ public class StudentService {
         return student;
     }
 
-    @CacheAnnotation(value = "save")
+    @CacheAnnotation(value = "save",cacheElementKey = "get_student_cache", operation = CacheOperation.UPDATE)
     @LogAnnotation(methodDescription = "保存")
     public void save(String id){
         System.out.println("保存成功！");

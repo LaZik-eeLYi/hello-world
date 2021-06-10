@@ -17,4 +17,6 @@ public @interface CacheAnnotation {
     String value() default "";
     //标识存入cache的elementKey
     String cacheElementKey() default "";
+    //对cache的操作
+    CacheOperation operation();
 }

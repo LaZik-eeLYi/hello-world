@@ -1,4 +1,4 @@
-package com.lupan.springStudy.chapter3;
+package com.lupan.springStudy.chapter3_aop.traditional;
 
 import org.springframework.aop.MethodBeforeAdvice;
 import org.springframework.aop.framework.ProxyFactory;

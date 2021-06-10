@@ -1,4 +1,4 @@
-package com.lupan.springStudy.chapter3_aop;
+package com.lupan.springStudy.chapter3_aop.aspectj;
 
 /**
  * TODO

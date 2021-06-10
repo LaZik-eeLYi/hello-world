@@ -1,7 +1,7 @@
 /**
  * @版权所有: 四川曙光集团   
  * @标题: Teacher.java 
- * @包路径:  com.lupan.javaStudy.chapter3 
+ * @包路径:  com.lupan.javaStudy.traditional
  * @描述: TODO
  * @作者: 卢攀  
  * @日期: 2015年8月27日 下午5:19:18

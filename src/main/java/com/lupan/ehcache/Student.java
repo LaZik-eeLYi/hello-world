@@ -1,12 +1,14 @@
 package com.lupan.ehcache;
 
+import java.io.Serializable;
+
 /**
  * TODO
  *
  * @author lupan
  * @version 2016/4/6 0006
  */
-public class Student {
+public class Student implements Serializable {
 
     private String id;
     private String name;

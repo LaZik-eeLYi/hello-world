@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.lupan.mvnstudy</groupId>
+	<groupId>com.lupan</groupId>
 	<artifactId>hello-world</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<name>Maven Hello World Project</name>
@@ -15,10 +15,18 @@
 		<spring.version>4.0.8.RELEASE</spring.version>
 		<ehcache.version>2.6.9</ehcache.version>
 		<aspectj.version>1.8.8</aspectj.version>
+		<slf4j.version>1.7.7</slf4j.version>
 	</properties>
 
 	<!-- 设定主仓库，按设定顺序进行查找。 -->
 	<repositories>
+
+		<repository>
+			<id>oschina-repos</id>
+			<name>Oschina Releases</name>
+			<url>http://maven.oschina.net/content/groups/public</url>
+		</repository>
+
 		<repository>
 			<id>jboss-public-repository-group</id>
 			<url>https://repository.jboss.org/nexus/content/groups/public-jboss</url>
@@ -33,6 +41,30 @@
 
 	<!-- 依赖项定义 -->
 	<dependencies>
+		<!-- LOGGING begin -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<!-- common-logging 实际调用slf4j -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<!-- java.util.logging 实际调用slf4j -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jul-to-slf4j</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<!-- LOGGING end -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>

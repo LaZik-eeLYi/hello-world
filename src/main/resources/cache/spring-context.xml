@@ -16,7 +16,7 @@
 	<description>Spring Configuration</description>
 
 	<!-- 使用Annotation自动注册Bean，解决事物失效问题：在主容器中不扫描@Controller注解，在SpringMvc中只扫描@Controller注解。  -->
-	<context:component-scan base-package="com.lupan.springStudy"><!-- base-package 如果多个，用“,”分隔 -->
+	<context:component-scan base-package="com.lupan.ehcache"><!-- base-package 如果多个，用“,”分隔 -->
 	<!--<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>-->
 	</context:component-scan>
 
@@ -25,7 +25,7 @@
 
 	<!-- 缓存配置 -->
 	<bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
-		<property name="configLocation" value="classpath:${ehcache.configFile}" />
+		<property name="configLocation" value="classpath:cache/ehcache.xml" />
 	</bean>
 
 	<!--&lt;!&ndash; 加载配置属性文件 &ndash;&gt;-->

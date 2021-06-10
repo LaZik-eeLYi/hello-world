@@ -1,7 +1,5 @@
 package com.lupan.springStudy.common;
 
-import com.lupan.springStudy.chapter3_aop.AopService1;
-import com.lupan.springStudy.chapter3_aop.AopService2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 

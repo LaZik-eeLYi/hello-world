@@ -1,4 +1,4 @@
-package com.lupan.springStudy.chapter3;
+package com.lupan.springStudy.chapter3_aop.traditional;
 
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;

@@ -1,6 +1,6 @@
 package com.lupan.springStudy.common;
 
-import com.lupan.springStudy.chapter3_aop.AopAnnotation;
+import com.lupan.springStudy.chapter3_aop.aspectj.AopAnnotation;
 import org.springframework.stereotype.Service;
 
 /**
