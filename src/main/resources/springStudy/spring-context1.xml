@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	   xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	   xmlns:util="http://www.springframework.org/schema/util" xmlns:task="http://www.springframework.org/schema/task"
+	   xmlns:aop="http://www.springframework.org/schema/aop" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.0.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd"
+	   xmlns:p="http://www.springframework.org/schema/p"
+	    default-lazy-init="true">
+
+	<description>Spring Configuration</description>
+
+	<!-- 使用Annotation自动注册Bean，解决事物失效问题：在主容器中不扫描@Controller注解，在SpringMvc中只扫描@Controller注解。  -->
+	<context:component-scan base-package="com.lupan"><!-- base-package 如果多个，用“,”分隔 -->
+	<!--<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>-->
+	</context:component-scan>
+
+	<!-- 自定义AOP -->
+	<aop:aspectj-autoproxy/>
+
+	<!--属性注入-->
+    <bean id="car" class="com.lupan.springStudy.chapter2_ioc.Car">
+        <property name="id" value="001"/>
+		<property name="name" value="本田"/>
+		<property name="user" ref="user"/>
+	</bean>
+
+	<!--p命名空间来简化配置-->
+	<bean id="car1" class="com.lupan.springStudy.chapter2_ioc.Car"
+		  p:id="002" p:name="本田" p:user-ref="user"/>
+
+	<!--构造器注入-->
+	<bean id="user" class="com.lupan.springStudy.chapter2_ioc.User">
+        <constructor-arg index="0" type="java.lang.String" value="001" name="id"/>
+		<constructor-arg index="1" type="java.lang.String" value="小明" name="name"/>
+		<constructor-arg index="2" type="double" value="57.5" name="weight"/>
+		<constructor-arg index="3" type="double" value="1.75" name="height"/>
+		<property name="hobbies">
+			<list value-type="java.lang.String">
+				<value>篮球</value>
+				<value>足球</value>
+				<value>羽毛球</value>
+			</list>
+		</property>
+		<property name="favorites">
+			<map key-type="java.lang.Integer" value-type="java.lang.String">
+				<entry key="1" value="游戏"/>
+				<entry key="2" value="玩手机"/>
+				<entry key="3" value="玩电脑"/>
+			</map>
+		</property>
+		<property name="knowledges">
+			<set>
+				<value>语文</value>
+				<value>数学</value>
+				<value>英语</value>
+			</set>
+		</property>
+	</bean>
+
+	<!--通过util标签显示指定集合bean-->
+	<util:list id="nameList" list-class="java.util.LinkedList" value-type="java.lang.String">
+		<value>小明</value>
+		<value>小红</value>
+		<value>小强</value>
+	</util:list>
+	
+</beans>
